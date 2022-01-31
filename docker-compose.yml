@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  mpi_head:
+    image: awoo/dockermpi
+    ports:
+      - "6699:22"
+    links:
+      - "mpi_node:nodes"
+  mpi_node:
+    image: awoo/dockermpi
+    deploy:
+      replicas: 4
